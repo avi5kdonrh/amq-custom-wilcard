@@ -250,7 +250,7 @@ public class CustomWildcardTest extends ActiveMQTestBase implements MessageListe
        }
 
 
-       ((ActiveMQConnection)connection).getSessionFactory().getConnection().close();
+       ((ActiveMQConnection)connection).getSessionFactory().getConnection().destroy();
        System.out.println(">> END >>");
        connection.close();
        server1.stop();

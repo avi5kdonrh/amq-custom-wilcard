@@ -219,7 +219,6 @@ public class DefaultWildcardTest extends ActiveMQTestBase implements MessageList
                session.createConsumer(dest).setMessageListener(this);
 
            }
-       ((ActiveMQConnection)connection).getSessionFactory().getConnection().close();
        System.out.println(">>>>>>>>>>>>>> Consumer Created >>>>>>>>>>>>>>");
 
        Thread.sleep(500);
@@ -251,7 +250,7 @@ public class DefaultWildcardTest extends ActiveMQTestBase implements MessageList
        }
 
 
-       ((ActiveMQConnection)connection).getSessionFactory().getConnection().close();
+       ((ActiveMQConnection)connection).getSessionFactory().getConnection().destroy();
        System.out.println(">> END >>");
        connection.close();
      server1.stop();
